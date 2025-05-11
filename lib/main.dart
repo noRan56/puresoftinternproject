@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:puresoftinternproject/presentation_layer/view/home_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/home_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/on_boardingView1.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           ),
-          home: HomeView(),
+          home: OnBoardingview1(),
         );
       },
     );
