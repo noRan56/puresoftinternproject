@@ -14,7 +14,7 @@ class AppTextField extends StatelessWidget {
       width: 347.w,
       height: 51.h,
       padding: EdgeInsets.only(left: 20),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(25)),
       child: TextField(
         controller: controller,
 
@@ -22,13 +22,13 @@ class AppTextField extends StatelessWidget {
         maxLines: maxLine,
 
         decoration: InputDecoration(
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(25),
             borderSide: BorderSide(color: Colors.grey),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(25),
             borderSide: BorderSide(color: Colors.grey),
           ),
         ),

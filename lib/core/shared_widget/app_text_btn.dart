@@ -14,6 +14,7 @@ class AppTextBtn extends StatelessWidget {
     return Container(
       width: 347.w,
       height: 51.h,
+      padding: EdgeInsets.only(left: 20),
 
       decoration: BoxDecoration(
         color: color,

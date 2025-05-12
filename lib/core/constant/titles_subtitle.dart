@@ -60,4 +60,8 @@ class TitlesSubtitle {
 
   static const String categories = 'Categories';
   static const String fruits = 'Fruits';
+
+  //Mobile Number
+
+  static const String mobileNumber = 'Mobile Number';
 }
