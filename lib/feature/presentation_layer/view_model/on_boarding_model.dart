@@ -5,7 +5,7 @@ class OnboardingViewModel {
   List<OnboardingModel> items = [
     OnboardingModel(
       image: 'assets/images/onboarding.png',
-      title: TitlesSubtitle.onBoardingSubTitle1,
+      title: TitlesSubtitle.onBoardingTitle1,
       descriptions: TitlesSubtitle.onBoardingSubTitle1,
     ),
     OnboardingModel(

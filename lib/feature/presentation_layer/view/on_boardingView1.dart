@@ -34,8 +34,8 @@ class _OnBoardingview1State extends State<OnBoardingview1> {
                   children: [
                     Image(
                       image: AssetImage(controller.items[index].image),
-                      width: 280.w,
-                      height: 290.h,
+                      width: 285.w,
+                      height: 273.h,
                       fit: BoxFit.contain,
                     ),
 
@@ -49,17 +49,17 @@ class _OnBoardingview1State extends State<OnBoardingview1> {
                     ),
                   ],
                 ),
-                SizedBox(height: 15.h),
+                SizedBox(height: 30.h),
                 SmoothPageIndicator(
                   controller: pageController,
                   count: totalPages,
                   effect: WormEffect(
-                    dotHeight: 12,
-                    dotWidth: 12,
+                    dotHeight: 12.h,
+                    dotWidth: 11.w,
                     activeDotColor: CustomAppColors.deepGreen,
                   ),
                 ),
-                SizedBox(height: 15.h),
+                SizedBox(height: 70.h),
                 if (index == 0 || index == 1) AppBtnsOnboarding(text: 'Next'),
                 if (index == (totalPages - 1))
                   AppBtnsOnboarding(text: 'Get Started'),
