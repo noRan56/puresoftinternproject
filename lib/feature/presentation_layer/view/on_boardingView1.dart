@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:puresoftinternproject/core/shared_widget/app_btns_onboarding.dart';
 import 'package:puresoftinternproject/core/shared_widget/on_borading_text.dart';
+import 'package:puresoftinternproject/core/styles/custom_app_colors.dart';
 import 'package:puresoftinternproject/core/styles/custom_app_text.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view_model/on_boarding_model.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingview1 extends StatefulWidget {
   const OnBoardingview1({super.key});
@@ -46,6 +48,16 @@ class _OnBoardingview1State extends State<OnBoardingview1> {
                       style: CustomAppText.font16RegularLightGrey,
                     ),
                   ],
+                ),
+                SizedBox(height: 15.h),
+                SmoothPageIndicator(
+                  controller: pageController,
+                  count: totalPages,
+                  effect: WormEffect(
+                    dotHeight: 12,
+                    dotWidth: 12,
+                    activeDotColor: CustomAppColors.deepGreen,
+                  ),
                 ),
                 SizedBox(height: 15.h),
                 if (index == 0 || index == 1) AppBtnsOnboarding(text: 'Next'),
