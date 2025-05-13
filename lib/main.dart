@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:puresoftinternproject/core/shared_widget/phone_field_widget.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/contact_us_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/home_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/login_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/on_boardingView1.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           ),
-          home: LoginView(),
+          home: ContactUsView(),
         );
       },
     );

@@ -21,6 +21,12 @@ class CustomAppText {
     color: CustomAppColors.darkblue,
     fontFamily: 'Poppins',
   );
+  static TextStyle font24BoldGreen = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.bold,
+    color: CustomAppColors.deepGreen,
+    fontFamily: 'Poppins',
+  );
   static TextStyle font16RegularLightGrey = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.normal,

@@ -12,7 +12,7 @@ class AppTextBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 347.w,
+      width: 345.w,
       height: 51.h,
       padding: EdgeInsets.only(left: 20),
 
