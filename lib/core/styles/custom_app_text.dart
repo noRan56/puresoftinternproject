@@ -34,4 +34,11 @@ class CustomAppText {
 
     fontFamily: 'Poppins',
   );
+  static TextStyle font14RegularLightGrey = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.normal,
+    color: CustomAppColors.lightGrey,
+
+    fontFamily: 'Poppins',
+  );
 }
