@@ -9,4 +9,5 @@ class CustomAppColors {
   static const grey = Color(0xFf858D9A);
   static const lightGrey = Color(0xFf78787C);
   static const darkblue = Color(0xFf2F2E41);
+  static const blue = Color(0xFf235C95);
 }

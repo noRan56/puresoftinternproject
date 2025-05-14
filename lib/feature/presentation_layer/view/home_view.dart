@@ -19,7 +19,11 @@ class HomeView extends StatelessWidget {
               hintText: 'Search',
               maxLine: 1,
             ),
-            AppTextBtn(text: 'text', color: CustomAppColors.red),
+            AppTextBtn(
+              text: 'text',
+              color: CustomAppColors.red,
+              isEnable: true,
+            ),
           ],
         ),
       ),

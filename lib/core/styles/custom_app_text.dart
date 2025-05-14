@@ -21,10 +21,22 @@ class CustomAppText {
     color: CustomAppColors.darkblue,
     fontFamily: 'Poppins',
   );
+  static TextStyle font42BoldGreen = TextStyle(
+    fontSize: 42.sp,
+    fontWeight: FontWeight.bold,
+    color: CustomAppColors.deepGreen,
+    fontFamily: 'Poppins',
+  );
   static TextStyle font24BoldGreen = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeight.bold,
     color: CustomAppColors.deepGreen,
+    fontFamily: 'Poppins',
+  );
+  static TextStyle font28BoldBlack = TextStyle(
+    fontSize: 28.sp,
+    fontWeight: FontWeight.bold,
+    color: CustomAppColors.black,
     fontFamily: 'Poppins',
   );
   static TextStyle font26BoldRed = TextStyle(
