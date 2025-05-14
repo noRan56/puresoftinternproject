@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:puresoftinternproject/core/shared_widget/phone_field_widget.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/contact_us_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/failed_check_out_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/home_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/login_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/my_order_view.dart';
@@ -9,6 +11,12 @@ import 'package:puresoftinternproject/feature/presentation_layer/view/on_boardin
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]);
 
   runApp(const MyApp());
 }
@@ -31,7 +39,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           ),
-          home: MyOrderView(),
+          home: FailedCheckOutView(),
         );
       },
     );
