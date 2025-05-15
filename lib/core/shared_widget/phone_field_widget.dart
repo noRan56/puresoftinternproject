@@ -10,7 +10,7 @@ class PhoneInputWidget extends StatelessWidget {
     return Container(
       width: 347.w,
       height: 70.h,
-      padding: EdgeInsets.only(left: 20),
+      // padding: EdgeInsets.only(left: 20),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(25)),
 
       child: IntlPhoneField(
