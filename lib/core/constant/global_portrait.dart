@@ -8,7 +8,7 @@ class OrientationBuilderWidget extends StatelessWidget {
     Key? key,
     required this.portraitBuilder,
     required this.landscapeBuilder,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
