@@ -39,6 +39,13 @@ class CustomAppText {
     color: CustomAppColors.black,
     fontFamily: 'Poppins',
   );
+  static TextStyle font18BoldLightBlue = TextStyle(
+    fontSize: 18.sp,
+    decoration: TextDecoration.underline,
+    fontWeight: FontWeight.normal,
+    color: CustomAppColors.lightBlue,
+    fontFamily: 'TitilliumWeb',
+  );
   static TextStyle font26BoldRed = TextStyle(
     fontSize: 26.sp,
     fontWeight: FontWeight.bold,

@@ -9,6 +9,7 @@ import 'package:puresoftinternproject/feature/presentation_layer/view/login_view
 import 'package:puresoftinternproject/feature/presentation_layer/view/my_order_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/on_boardingView1.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/order_tracking_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/sign_in_login_in_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/success_check_out_view.dart';
 
 void main() {
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           ),
-          home: OrderTrackingView(),
+          home: SignInLoginInView(),
         );
       },
     );

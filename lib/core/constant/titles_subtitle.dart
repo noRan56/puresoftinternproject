@@ -18,6 +18,9 @@ class TitlesSubtitle {
   //sign in
   static const String signInTitle = 'Sign In to Wikala';
   static const String dontHaveAccount = 'Don\'t have an account? ';
+  static const String haveAccount = 'Already member?';
+  static const String agreeOfTerms = 'By continue you agree to our';
+  static const String termsOfService = 'and ourPrivacy Policy';
 
   //forget password
   static const String forgetPasswordTitle = 'Forget Password';
