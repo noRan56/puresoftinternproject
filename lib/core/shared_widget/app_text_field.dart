@@ -26,6 +26,7 @@ class AppTextField extends StatelessWidget {
         maxLines: maxLine,
 
         decoration: InputDecoration(
+          hintText: hintText,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(isSingleLine ? 25 : 10),
           ),
@@ -39,7 +40,7 @@ class AppTextField extends StatelessWidget {
           ),
           contentPadding:
               isSingleLine
-                  ? EdgeInsets.zero
+                  ? EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w)
                   : EdgeInsets.symmetric(vertical: 10.h, horizontal: 12.w),
         ),
       ),
