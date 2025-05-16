@@ -4,6 +4,7 @@ import 'package:puresoftinternproject/core/constant/global_portrait.dart';
 import 'package:puresoftinternproject/core/constant/titles_subtitle.dart';
 import 'package:puresoftinternproject/core/shared_widget/app_text_btn.dart';
 import 'package:puresoftinternproject/core/shared_widget/app_text_field.dart';
+import 'package:puresoftinternproject/core/shared_widget/arrow_back_widget.dart';
 import 'package:puresoftinternproject/core/shared_widget/phone_field_widget.dart';
 import 'package:puresoftinternproject/core/shared_widget/text_btn_icon.dart';
 import 'package:puresoftinternproject/core/styles/custom_app_colors.dart';
@@ -30,15 +31,7 @@ Widget buildLayout() {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(width: 35.w),
-            Image.asset(
-              'assets/images/IconArrowBack.png',
-              width: 14.w,
-              height: 14.h,
-              fit: BoxFit.cover,
-            ),
-          ],
+          children: [SizedBox(width: 35.w), ArrowBackWidget()],
         ),
         SizedBox(height: 100.h),
         Text(TitlesSubtitle.title, style: CustomAppText.font42BoldGreen),

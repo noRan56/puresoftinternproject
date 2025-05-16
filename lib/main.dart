@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           ),
-          home: SignUpView(),
+          home: LoginView(),
         );
       },
     );
