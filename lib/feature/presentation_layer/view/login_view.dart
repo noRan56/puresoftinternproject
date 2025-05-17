@@ -54,7 +54,7 @@ Widget buildLayout() {
           SizedBox(height: 10.h),
           Padding(
             padding: EdgeInsets.only(right: 250.w),
-            child: TextWidgetFont14Grey(text: 'Password'),
+            child: TextWidgetFont14Grey(text: 'Password *'),
           ),
           AppTextField(
             // controller: TextEditingController(),
