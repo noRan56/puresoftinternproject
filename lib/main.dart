@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:puresoftinternproject/core/shared_widget/phone_field_widget.dart';
-import 'package:puresoftinternproject/feature/presentation_layer/view/contact_us_view.dart';
-import 'package:puresoftinternproject/feature/presentation_layer/view/failed_check_out_view.dart';
-import 'package:puresoftinternproject/feature/presentation_layer/view/home_view.dart';
-import 'package:puresoftinternproject/feature/presentation_layer/view/login_view.dart';
-import 'package:puresoftinternproject/feature/presentation_layer/view/my_order_view.dart';
-import 'package:puresoftinternproject/feature/presentation_layer/view/on_boardingView1.dart';
-import 'package:puresoftinternproject/feature/presentation_layer/view/order_tracking_view.dart';
-import 'package:puresoftinternproject/feature/presentation_layer/view/sign_in_login_in_view.dart';
-import 'package:puresoftinternproject/feature/presentation_layer/view/sign_up_view.dart';
-import 'package:puresoftinternproject/feature/presentation_layer/view/success_check_out_view.dart';
+import 'package:puresoftinternproject/app_router.dart';
+import 'package:puresoftinternproject/core/routing/routes.dart';
+
+import 'package:puresoftinternproject/feature/presentation_layer/view/splash_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,11 +15,12 @@ void main() {
     DeviceOrientation.landscapeRight,
   ]);
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final AppRouter _appRouter = AppRouter();
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +32,14 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
+          initialRoute: Routes.splashView,
+          onGenerateRoute: _appRouter.generateRoute,
 
           title: 'Fruit Market',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           ),
-          home: HomeView(),
+          home: const SplashView(),
         );
       },
     );

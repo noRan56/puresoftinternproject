@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:puresoftinternproject/core/routing/routes.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/check._out_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/failed_check_out_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/forget_password_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/home_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/login_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/my_order_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/nav_bar_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/otp_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/profile.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/sign_in_login_in_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/sign_up_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/splash_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/success_check_out_view.dart';
 
 class AppRouter {
@@ -11,40 +19,37 @@ class AppRouter {
     //this arguments to be passed in any View like this ( arguments as ClassName )
 
     switch (settings.name) {
+      case Routes.splashView:
+        return MaterialPageRoute(builder: (_) => const SplashView());
       case Routes.loginView:
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.signUpView:
         return MaterialPageRoute(builder: (_) => const SignUpView());
       case Routes.homeView:
         return MaterialPageRoute(builder: (_) => HomeView());
-      // case Routes.profileView:
-      //   return MaterialPageRoute(builder: (_) =>  ProfileView());
-      // case Routes.cartView:
-      //   return MaterialPageRoute(builder: (_) => const CartView());
-      // case Routes.notificationView:
-      //   return MaterialPageRoute(builder: (_) => const NotificationView());
-      // case Routes.checkoutView:
-      //   return MaterialPageRoute(builder: (_) => const CheckoutView());
+      case Routes.profileView:
+        return MaterialPageRoute(builder: (_) => ProfileView());
+      case Routes.signInLoginInView:
+        return MaterialPageRoute(builder: (_) => const SignInLoginInView());
+      case Routes.navBarView:
+        return MaterialPageRoute(builder: (_) => NavBarView());
+      case Routes.checkoutView:
+        return MaterialPageRoute(builder: (_) => CheckOutView());
 
       case Routes.checkoutSuccessView:
         return MaterialPageRoute(builder: (_) => const SuccessCheckOutView());
       case Routes.checkoutFailedView:
         return MaterialPageRoute(builder: (_) => const FailedCheckOutView());
-      // case Routes.authenticationView:
-      //   return MaterialPageRoute(builder: (_) => const AuthenticationView());
-      // case Routes.addProduct:
-      //   return MaterialPageRoute(builder: (_) => const AddProductView());
+      case Routes.forgetPasswordView:
+        return MaterialPageRoute(builder: (_) => ForgetPasswordView());
+      case Routes.otpView:
+        return MaterialPageRoute(builder: (_) => OtpView());
 
-      // case Routes.categoryView:
-      //   return MaterialPageRoute(builder: (_) => const CategoryView());
+      case Routes.myOrderView:
+        return MaterialPageRoute(builder: (_) => MyOrderView());
       // case Routes.wishListView:
       //   return MaterialPageRoute(builder: (_) => const WishListView());
 
-      // case Routes.detailsProductView:
-      //   var product;
-      //   return MaterialPageRoute(
-      //     builder: (_) => ProductDetailsView(product: product),
-      //   );
       default:
         return null;
     }

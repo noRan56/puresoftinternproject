@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:puresoftinternproject/core/constant/global_portrait.dart';
 import 'package:puresoftinternproject/core/constant/titles_subtitle.dart';
 import 'package:puresoftinternproject/core/shared_widget/appbar_title_arrow.dart';
 import 'package:puresoftinternproject/core/styles/custom_app_colors.dart';
@@ -13,16 +14,23 @@ class MyOrderView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: CustomAppColors.white,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AppbarTitleArrow(text: TitlesSubtitle.myOrders),
-            Divider(),
-            SizedBox(height: 20.h),
-            Expanded(child: MyOrderViewModel()),
-          ],
+        body: OrientationBuilderWidget(
+          portraitBuilder: (context) => buildLayout(),
+          landscapeBuilder: (context) => buildLayout(),
         ),
       ),
     );
   }
+}
+
+Widget buildLayout() {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      AppbarTitleArrow(text: TitlesSubtitle.myOrders),
+      Divider(),
+      SizedBox(height: 20.h),
+      Expanded(child: MyOrderViewModel()),
+    ],
+  );
 }

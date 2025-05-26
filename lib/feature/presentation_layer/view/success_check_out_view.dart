@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:puresoftinternproject/core/constant/titles_subtitle.dart';
+import 'package:puresoftinternproject/core/routing/routes.dart';
 import 'package:puresoftinternproject/core/shared_widget/app_text_btn.dart';
 import 'package:puresoftinternproject/core/shared_widget/appbar_title_arrow.dart';
 import 'package:puresoftinternproject/core/styles/custom_app_colors.dart';
@@ -13,10 +14,15 @@ class SuccessCheckOutView extends StatelessWidget {
   Widget build(BuildContext context) {
     final isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
-    return SafeArea(child: Scaffold(body: buildLayout(isPortrait)));
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: CustomAppColors.white,
+        body: buildLayout(isPortrait, context),
+      ),
+    );
   }
 
-  Widget buildLayout(bool isPortrait) {
+  Widget buildLayout(bool isPortrait, BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -45,16 +51,23 @@ class SuccessCheckOutView extends StatelessWidget {
             style: CustomAppText.font16RegularLightGrey,
           ),
           SizedBox(height: 100.h),
-          AppTextBtn(
-            text: isPortrait ? 'Continue Shopping' : 'Back',
-            color: CustomAppColors.deepGreen,
-            isEnable: true,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, Routes.navBarView);
+            },
+            child: AppTextBtn(
+              text: 'Continue Shopping',
+              color: CustomAppColors.deepGreen,
+              isEnable: true,
+              onPressd: () {},
+            ),
           ),
           SizedBox(height: 20.h),
           AppTextBtn(
             text: 'Track Order',
             color: CustomAppColors.deepGreen,
             isEnable: false,
+            onPressd: () {},
           ),
         ],
       ),

@@ -1,7 +1,15 @@
 class Routes {
+  static const String splashView = '/splashView';
   static const String loginView = '/loginView';
   static const String signUpView = '/signUpView';
+  static const String signInLoginInView = '/signInLoginInView';
+  static const String forgetPasswordView = '/forgetPasswordView';
+  static const String navBarView = '/navBarView';
+  static const String otpView = '/otpView';
   static const String homeView = '/homeView';
+  static const String favoriteView = '/favoriteView';
+  static const String myOrderView = '/myOrderView';
+  static const String orderTrackingView = '/orderTrackingView';
   static const String authenticationView = '/authenticationView';
   static const String detailsProductView = '/datailsProductView';
   static const String profileView = '/profileView';

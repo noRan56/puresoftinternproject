@@ -1,10 +1,15 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:puresoftinternproject/core/constant/global_portrait.dart';
 import 'package:puresoftinternproject/core/constant/titles_subtitle.dart';
+import 'package:puresoftinternproject/core/routing/routes.dart';
 import 'package:puresoftinternproject/core/shared_widget/app_social_media_sign_btn.dart';
 import 'package:puresoftinternproject/core/shared_widget/text_btn_icon.dart';
+import 'package:puresoftinternproject/core/styles/custom_app_colors.dart';
 import 'package:puresoftinternproject/core/styles/custom_app_text.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/login_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/terms_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view_model/sign_in_log_in_view_model.dart';
 
 class SignInLoginInView extends StatelessWidget {
@@ -15,16 +20,17 @@ class SignInLoginInView extends StatelessWidget {
     final viewModel = SignInLogInViewModel();
     return SafeArea(
       child: Scaffold(
+        backgroundColor: CustomAppColors.white,
         body: OrientationBuilderWidget(
-          portraitBuilder: (context) => buildLayout(viewModel),
-          landscapeBuilder: (context) => buildLayout(viewModel),
+          portraitBuilder: (context) => buildLayout(viewModel, context),
+          landscapeBuilder: (context) => buildLayout(viewModel, context),
         ),
       ),
     );
   }
 }
 
-Widget buildLayout(dynamic viewModel) {
+Widget buildLayout(dynamic viewModel, BuildContext context) {
   return SingleChildScrollView(
     child: Padding(
       padding: EdgeInsets.only(top: 40.h),
@@ -65,26 +71,51 @@ Widget buildLayout(dynamic viewModel) {
           ),
           SizedBox(height: 41.h),
           Padding(
-            padding: EdgeInsets.only(left: 120.w),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(TitlesSubtitle.haveAccount),
-                TextBtnIcon(text: 'Sign In', onPressed: () {}),
-              ],
+            padding: EdgeInsets.only(left: 40.w),
+            child: RichText(
+              text: TextSpan(
+                text: TitlesSubtitle.haveAccount,
+                style: CustomAppText.font16RegularLightGrey,
+                children: <TextSpan>[
+                  TextSpan(
+                    text: 'Sign In',
+                    style: CustomAppText.font18BoldLightBlue,
+                    recognizer:
+                        TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.pushReplacementNamed(
+                              context,
+                              Routes.loginView,
+                            );
+                          },
+                  ),
+                ],
+              ),
             ),
           ),
+          SizedBox(height: 20.h),
           Padding(
             padding: EdgeInsets.only(left: 40.w),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(TitlesSubtitle.agreeOfTerms),
-                TextBtnIcon(
-                  text: 'Terms of service\n ${TitlesSubtitle.termsOfService}',
-                  onPressed: () {},
-                ),
-              ],
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                text: TitlesSubtitle.agreeOfTerms,
+                style: CustomAppText.font16RegularLightGrey,
+                children: <TextSpan>[
+                  TextSpan(
+                    text: 'Terms of service ${TitlesSubtitle.termsOfService}',
+                    style: CustomAppText.font18BoldLightBlue,
+                    recognizer:
+                        TapGestureRecognizer()
+                          ..onTap = () {
+                            MaterialPageRoute(
+                              builder:
+                                  (context) => const TermsAndConditionsView(),
+                            );
+                          },
+                  ),
+                ],
+              ),
             ),
           ),
         ],

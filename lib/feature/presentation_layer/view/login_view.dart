@@ -1,7 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:puresoftinternproject/core/constant/global_portrait.dart';
 import 'package:puresoftinternproject/core/constant/titles_subtitle.dart';
+import 'package:puresoftinternproject/core/routing/routes.dart';
 import 'package:puresoftinternproject/core/shared_widget/app_text_btn.dart';
 import 'package:puresoftinternproject/core/shared_widget/app_text_field.dart';
 import 'package:puresoftinternproject/core/shared_widget/arrow_back_widget.dart';
@@ -19,15 +21,15 @@ class LoginView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: OrientationBuilderWidget(
-          portraitBuilder: (context) => buildLayout(),
-          landscapeBuilder: (context) => buildLayout(),
+          portraitBuilder: (context) => buildLayout(context),
+          landscapeBuilder: (context) => buildLayout(context),
         ),
       ),
     );
   }
 }
 
-Widget buildLayout() {
+Widget buildLayout(BuildContext context) {
   return SingleChildScrollView(
     child: Padding(
       padding: EdgeInsets.only(top: 40.h),
@@ -66,29 +68,47 @@ Widget buildLayout() {
             children: [
               TextBtnIcon(
                 text: TitlesSubtitle.forgetPasswordTitle,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.forgetPasswordView);
+                },
               ),
               SizedBox(width: 40.w),
             ],
           ),
           SizedBox(height: 5.h),
-          AppTextBtn(
-            text: 'Login',
-            color: CustomAppColors.deepGreen,
-            isEnable: true,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, Routes.navBarView);
+            },
+            child: AppTextBtn(
+              text: 'Login',
+              color: CustomAppColors.deepGreen,
+              isEnable: true,
+              onPressd: () {},
+            ),
           ),
           SizedBox(height: 50.h),
           Padding(
-            padding: EdgeInsets.only(left: 80.w),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  TitlesSubtitle.dontHaveAccount,
-                  style: CustomAppText.font16RegularLightGrey,
-                ),
-                TextBtnIcon(text: 'Sign Up', onPressed: () {}),
-              ],
+            padding: EdgeInsets.only(left: 50.w),
+            child: RichText(
+              text: TextSpan(
+                text: TitlesSubtitle.dontHaveAccount,
+                style: CustomAppText.font16RegularLightGrey,
+                children: <TextSpan>[
+                  TextSpan(
+                    text: 'Sign Up',
+                    style: CustomAppText.font18BoldLightBlue,
+                    recognizer:
+                        TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.pushReplacementNamed(
+                              context,
+                              Routes.signUpView,
+                            );
+                          },
+                  ),
+                ],
+              ),
             ),
           ),
         ],
