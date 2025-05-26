@@ -9,10 +9,12 @@ import 'package:puresoftinternproject/feature/presentation_layer/view/my_order_v
 import 'package:puresoftinternproject/feature/presentation_layer/view/nav_bar_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/otp_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/profile.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/seller_details.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/sign_in_login_in_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/sign_up_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/splash_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/success_check_out_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/terms_view.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -44,11 +46,13 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ForgetPasswordView());
       case Routes.otpView:
         return MaterialPageRoute(builder: (_) => OtpView());
+      case Routes.termsView:
+        return MaterialPageRoute(builder: (_) => TermsAndConditionsView());
 
       case Routes.myOrderView:
         return MaterialPageRoute(builder: (_) => MyOrderView());
-      // case Routes.wishListView:
-      //   return MaterialPageRoute(builder: (_) => const WishListView());
+      case Routes.sellerDetails:
+        return MaterialPageRoute(builder: (_) => SellerDetails());
 
       default:
         return null;

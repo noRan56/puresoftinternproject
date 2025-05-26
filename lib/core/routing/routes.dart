@@ -7,12 +7,15 @@ class Routes {
   static const String navBarView = '/navBarView';
   static const String otpView = '/otpView';
   static const String homeView = '/homeView';
+  static const String basketView = '/basketView';
+  static const String sellerDetails = '/sellerDetails';
   static const String favoriteView = '/favoriteView';
   static const String myOrderView = '/myOrderView';
   static const String orderTrackingView = '/orderTrackingView';
   static const String authenticationView = '/authenticationView';
   static const String detailsProductView = '/datailsProductView';
   static const String profileView = '/profileView';
+  static const String termsView = '/termsView';
   static const String wishListView = '/wishListView';
   static const String addProduct = '/addProductView';
   static const String cartView = '/cartView';
