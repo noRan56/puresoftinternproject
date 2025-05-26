@@ -7,6 +7,12 @@ class CustomAppText {
     fontSize: 20.sp,
     fontWeight: FontWeight.bold,
   );
+  static TextStyle font12White = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w200,
+    color: CustomAppColors.white,
+    fontFamily: 'TitilliumWeb',
+  );
 
   static TextStyle btnStyle = TextStyle(
     fontSize: 18.sp,

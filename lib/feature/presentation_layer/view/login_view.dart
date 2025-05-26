@@ -77,14 +77,14 @@ Widget buildLayout(BuildContext context) {
           ),
           SizedBox(height: 5.h),
           GestureDetector(
-            onTap: () {
-              Navigator.pushReplacementNamed(context, Routes.navBarView);
-            },
+            onTap: () {},
             child: AppTextBtn(
               text: 'Login',
               color: CustomAppColors.deepGreen,
               isEnable: true,
-              onPressd: () {},
+              onPressd: () {
+                Navigator.pushReplacementNamed(context, Routes.navBarView);
+              },
             ),
           ),
           SizedBox(height: 50.h),
