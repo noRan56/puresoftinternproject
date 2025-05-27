@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:puresoftinternproject/core/constant/global_portrait.dart';
+import 'package:puresoftinternproject/core/routing/routes.dart';
 import 'package:puresoftinternproject/core/shared_widget/app_bar_title_widget.dart';
 import 'package:puresoftinternproject/core/shared_widget/app_text_btn.dart';
 import 'package:puresoftinternproject/core/shared_widget/app_text_field.dart';
@@ -17,6 +18,7 @@ class ContactUsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: CustomAppColors.white,
         body: OrientationBuilderWidget(
           landscapeBuilder: (context) => buildLayout(context),
           portraitBuilder: (context) => buildLayout(context),
@@ -29,24 +31,38 @@ class ContactUsView extends StatelessWidget {
 Widget buildLayout(context) {
   return SingleChildScrollView(
     child: Padding(
-      padding: EdgeInsets.only(left: 40.w, right: 20.w, top: 20.h),
+      padding: EdgeInsets.only(right: 20.w, top: 20.h),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
 
         children: [
-          AppbarTitleArrow(text: 'Contact Us'),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, Routes.navBarView);
+            },
+            child: AppbarTitleArrow(text: 'Contact Us'),
+          ),
           Divider(),
-
-          TextWidgetFont14Grey(text: 'Name'),
+          SizedBox(height: 20.h),
+          Padding(
+            padding: EdgeInsets.only(right: 250.w),
+            child: TextWidgetFont14Grey(text: 'Name'),
+          ),
           SizedBox(height: 10.h),
 
           AppTextField(maxLine: 1),
           SizedBox(height: 25.h),
-          TextWidgetFont14Grey(text: 'Mobile Number'),
+          Padding(
+            padding: EdgeInsets.only(right: 210.w),
+            child: TextWidgetFont14Grey(text: 'Mobile Number'),
+          ),
           SizedBox(height: 10.h),
           AppTextField(maxLine: 1),
           SizedBox(height: 25.h),
-          TextWidgetFont14Grey(text: 'Message'),
+          Padding(
+            padding: EdgeInsets.only(right: 250.w),
+            child: TextWidgetFont14Grey(text: 'Message'),
+          ),
           SizedBox(height: 10.h),
           AppTextField(maxLine: 7),
           SizedBox(height: 30.h),
@@ -55,9 +71,11 @@ Widget buildLayout(context) {
             text: 'Submit',
             color: CustomAppColors.deepGreen,
             isEnable: true,
-            onPressd: () {},
+            onPressd: () {
+              Navigator.pushReplacementNamed(context, Routes.navBarView);
+            },
           ),
-          SizedBox(height: 25.h),
+          SizedBox(height: 60.h),
           SocialMediaIcon(),
         ],
       ),

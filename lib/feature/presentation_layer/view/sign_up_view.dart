@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:puresoftinternproject/core/constant/global_portrait.dart';
@@ -18,10 +19,13 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: OrientationBuilderWidget(
-        portraitBuilder: (context) => buildLayout(context),
-        landscapeBuilder: (context) => buildLayout(context),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: CustomAppColors.white,
+        body: OrientationBuilderWidget(
+          portraitBuilder: (context) => buildLayout(context),
+          landscapeBuilder: (context) => buildLayout(context),
+        ),
       ),
     );
   }
@@ -69,15 +73,25 @@ Widget buildLayout(BuildContext context) {
           },
         ),
         SizedBox(height: 50.h),
-        Text(
-          TitlesSubtitle.alreadyHaveAccount,
-          style: CustomAppText.font16RegularLightGrey,
-        ),
-        TextBtnIcon(
-          text: 'Login',
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, Routes.loginView);
-          },
+        RichText(
+          text: TextSpan(
+            text: TitlesSubtitle.alreadyHaveAccount,
+            style: CustomAppText.font16RegularLightGrey,
+            children: <TextSpan>[
+              TextSpan(
+                text: 'Login',
+                style: CustomAppText.font18BoldLightBlue,
+                recognizer:
+                    TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.pushReplacementNamed(
+                          context,
+                          Routes.loginView,
+                        );
+                      },
+              ),
+            ],
+          ),
         ),
       ],
     ),

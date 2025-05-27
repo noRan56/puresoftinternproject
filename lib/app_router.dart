@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:puresoftinternproject/core/routing/routes.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/check._out_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/contact_us_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/failed_check_out_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/favorite_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/forget_password_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/home_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/login_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/my_order_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/nav_bar_view.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/order_tracking_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/otp_view.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/profile.dart';
 import 'package:puresoftinternproject/feature/presentation_layer/view/seller_details.dart';
@@ -37,6 +40,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => NavBarView());
       case Routes.checkoutView:
         return MaterialPageRoute(builder: (_) => CheckOutView());
+      case Routes.orderTrackingView:
+        return MaterialPageRoute(builder: (_) => OrderTrackingView());
 
       case Routes.checkoutSuccessView:
         return MaterialPageRoute(builder: (_) => const SuccessCheckOutView());
@@ -48,7 +53,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => OtpView());
       case Routes.termsView:
         return MaterialPageRoute(builder: (_) => TermsAndConditionsView());
-
+      case Routes.contactUsView:
+        return MaterialPageRoute(builder: (_) => ContactUsView());
+      case Routes.favoriteView:
+        return MaterialPageRoute(builder: (_) => FavoriteView());
       case Routes.myOrderView:
         return MaterialPageRoute(builder: (_) => MyOrderView());
       case Routes.sellerDetails:

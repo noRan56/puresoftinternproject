@@ -15,6 +15,7 @@ class Routes {
   static const String authenticationView = '/authenticationView';
   static const String detailsProductView = '/datailsProductView';
   static const String profileView = '/profileView';
+  static const String contactUsView = '/contactUsView';
   static const String termsView = '/termsView';
   static const String wishListView = '/wishListView';
   static const String addProduct = '/addProductView';

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:puresoftinternproject/app_router.dart';
 import 'package:puresoftinternproject/core/routing/routes.dart';
+import 'package:puresoftinternproject/feature/presentation_layer/view/nav_bar_view.dart';
 
 import 'package:puresoftinternproject/feature/presentation_layer/view/splash_view.dart';
 
@@ -32,6 +33,11 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
+
+          // Localization
+          supportedLocales: [Locale('en'), Locale('ar')],
+
+          //   go router
           initialRoute: Routes.splashView,
           onGenerateRoute: _appRouter.generateRoute,
 
@@ -39,7 +45,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           ),
-          home: const SplashView(),
+          home: NavBarView(),
         );
       },
     );

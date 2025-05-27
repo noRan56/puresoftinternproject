@@ -67,7 +67,12 @@ class SuccessCheckOutView extends StatelessWidget {
             text: 'Track Order',
             color: CustomAppColors.deepGreen,
             isEnable: false,
-            onPressd: () {},
+            onPressd: () {
+              Navigator.pushReplacementNamed(
+                context,
+                Routes.checkoutFailedView,
+              );
+            },
           ),
         ],
       ),

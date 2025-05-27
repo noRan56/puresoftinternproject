@@ -20,6 +20,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: CustomAppColors.white,
         body: OrientationBuilderWidget(
           portraitBuilder: (context) => buildLayout(context),
           landscapeBuilder: (context) => buildLayout(context),
